@@ -47,7 +47,7 @@ public class FileOpener extends ReactContextBaseJavaModule {
 
   		if (file.exists()) {
   			try {
-          Uri path = FileProvider.getUriForFile(getReactApplicationContext(), getReactApplicationContext().getPackageName() + ".fileprovider", file);
+          Uri path = FileProvider.getUriForFile(getReactApplicationContext(), getReactApplicationContext().getPackageName() + ".provider", file);
   				Intent intent = new Intent(Intent.ACTION_VIEW);
   				intent.setDataAndType(path, contentType);
           intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
