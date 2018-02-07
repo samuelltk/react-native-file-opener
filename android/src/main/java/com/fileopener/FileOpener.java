@@ -50,7 +50,7 @@ public class FileOpener extends ReactContextBaseJavaModule {
   		if (file.exists()) {
   			try {
                 Log.e("------",getReactApplicationContext().getPackageName());
-          Uri path = FileProvider.getUriForFile(getReactApplicationContext(), "com.energymost.hipdiscoing" + ".provider", file);
+          Uri path = FileProvider.getUriForFile(getReactApplicationContext(), getReactApplicationContext().getPackageName() + ".provider", file);
   				Intent intent = new Intent(Intent.ACTION_VIEW);
   				intent.setDataAndType(path, contentType);
           intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
