@@ -24,6 +24,8 @@ import com.facebook.react.bridge.ReactMethod;
 import java.util.Map;
 import java.util.HashMap;
 
+import android.util.Log;
+
 public class FileOpener extends ReactContextBaseJavaModule {
 
   public FileOpener(ReactApplicationContext reactContext) {
@@ -47,7 +49,8 @@ public class FileOpener extends ReactContextBaseJavaModule {
 
   		if (file.exists()) {
   			try {
-          Uri path = FileProvider.getUriForFile(getReactApplicationContext(), getReactApplicationContext().getPackageName() + ".provider", file);
+                Log.e("------",getReactApplicationContext().getPackageName());
+          Uri path = FileProvider.getUriForFile(getReactApplicationContext(), "com.energymost.hipdiscoing" + ".provider", file);
   				Intent intent = new Intent(Intent.ACTION_VIEW);
   				intent.setDataAndType(path, contentType);
           intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
