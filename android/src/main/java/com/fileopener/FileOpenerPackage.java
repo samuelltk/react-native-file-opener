@@ -18,7 +18,6 @@ public class FileOpenerPackage implements ReactPackage {
     return Arrays.<NativeModule>asList(new FileOpener(reactContext));
   }
 
-  //@Override
   public List<Class<? extends JavaScriptModule>> createJSModules() {
     return Collections.emptyList();
   }
